@@ -1,5 +1,7 @@
 # WEB APP COUNTER PROJECT
 ## Start2Impact - Master in Fullstack Development
+
+### Visit the site at [tiredviking.github.io/counter](https://tiredviking.github.io/counter/).
 ### Overview
 - This web app was created as a project for Start2Impact Master in Fullstack Development. It is an app that allows the user to increase or decrease a counter, based on a selected step.  
 Here is a screenshot of the UI:  
