@@ -7,7 +7,7 @@ Here is a screenshot of the UI:
 
 - The interface is generated dinamically using JavaScript;
 - The counter can have negative numbers;
-- The step can only be a number between 1 and 100; floats are allowed;
+- The step can only be an integer between 1 and 100; floats are not allowed;
 - Input validation for the step is done when clicking on the + or - button; if the input is invalid an alert is displayed on screen;
 - Clicking on the reset button sets the counter to 0, but does not reset the step to 1;
 - Reloading the page resets the counter to 0 and the step to 1.
