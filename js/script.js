@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 
     // IF THE USER CLICKS ON +
     increment_btn.addEventListener("click", () => { 
-        if (Number(step_input.value) < 1 || Number(step_input.value) > 100 || Number.isNaN(Number(step_input.value))) {
+        if (Number(step_input.value) < 1 || Number(step_input.value) > 100 || !Number.isInteger(Number(step_input.value))) {
             alert("The step can only be a number between 1 and 100");
             return;
         }
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
      // IF THE USER CLICKS ON -   
     decrement_btn.addEventListener("click", () => {
-        if (Number(step_input.value) < 1 || Number(step_input.value) > 100 || Number.isNaN(Number(step_input.value))) {
+        if (Number(step_input.value) < 1 || Number(step_input.value) > 100 || !Number.isInteger(Number(step_input.value))) {
             alert("The step can only be a number between 1 and 100");
             return;
         }
