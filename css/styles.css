@@ -1,0 +1,133 @@
+:root {
+    --primary-bg: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-main: #1a1a1a;
+    --accent-color: #6366f1; /* Indigo */
+    --red: #e11414;
+    --green: #16833C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--primary-bg);
+}
+
+
+.description_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem 3rem 0 3rem;
+    padding: 0 1rem;
+    text-wrap: wrap;
+    text-align: center;
+
+}
+.app_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--card-bg);
+    margin-top: 1rem;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 400px;
+}
+
+.counter {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.operations {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 2rem;
+}
+
+/* Button */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.increase, .decrease {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.increase { background-color: var(--green); }
+.increase:hover { background-color: #16a34a; }
+
+.decrease { background-color: var(--red); }
+.decrease:hover { background-color: #dc2626; }
+
+/* Step Input */
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.step_label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #666;
+}
+
+.step_input {
+    width: 60px;
+    padding: 8px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    outline: none;
+}
+
+.step_input:focus {
+    border-color: var(--accent-color);
+}
+
+/* Reset Button */
+.reset {
+    background-color: transparent;
+    color: #666;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    text-decoration: underline;
+}
+
+.reset:hover {
+    color: var(--text-main);
+}
