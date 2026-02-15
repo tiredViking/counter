@@ -6,11 +6,12 @@
 // RELOADING THE PAGE RESETS THE COUNTER TO 0 AND STEP TO 1.
 
 document.addEventListener("DOMContentLoaded", () => {
-  //========== GLOBAL VARIABLES ============================
-  let counter_value = 0;
-  //========================================================
 
-  //========= HTML ELEMENTS ================================
+  //---------- GLOBAL VARIABLES ----------------------------
+  let counter_value = 0;
+  //--------------------------------------------------------
+
+  //--------- HTML ELEMENTS --------------------------------
   const description_div = document.createElement("div");
   const description_title = document.createElement("h1");
   const description_text = document.createElement("p");
@@ -72,9 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
   step_div.appendChild(step_input);
   operations_div.appendChild(increment_btn);
   app_container.appendChild(reset_btn);
-  //========================================================
+  //--------------------------------------------------------
 
-  //============== FUNCTIONS ===============================
+  //-------------- FUNCTIONS -------------------------------
 
   // INPUT VALIDATION CRITERIA:
   function validate_input(value) {
@@ -105,9 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
     update_display();
   }
 
-  //========================================================
+  //--------------------------------------------------------
 
-  //============ EVENT LISTENERS ===========================
+  //------------ EVENT LISTENERS ---------------------------
   //
   // IF THE USER CLICKS ON +
   increment_btn.addEventListener("click", () => {
@@ -126,5 +127,5 @@ document.addEventListener("DOMContentLoaded", () => {
     counter_value = 0;
     update_display();
   });
-  //========================================================
+  //--------------------------------------------------------
 }); // END DOMCONTENTLOADED
