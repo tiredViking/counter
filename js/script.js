@@ -6,13 +6,11 @@
 // RELOADING THE PAGE RESETS THE COUNTER TO 0 AND STEP TO 1.
 
 document.addEventListener("DOMContentLoaded", () => {
-
-//========== GLOBAL VARIABLES ============================
+  //========== GLOBAL VARIABLES ============================
   let counter_value = 0;
-//========================================================
+  //========================================================
 
-
-//========= HTML ELEMENTS ================================
+  //========= HTML ELEMENTS ================================
   const description_div = document.createElement("div");
   const description_title = document.createElement("h1");
   const description_text = document.createElement("p");
@@ -74,10 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
   step_div.appendChild(step_input);
   operations_div.appendChild(increment_btn);
   app_container.appendChild(reset_btn);
-//========================================================
+  //========================================================
 
-
-//============== FUNCTIONS ===============================
+  //============== FUNCTIONS ===============================
 
   // INPUT VALIDATION CRITERIA:
   function validate_input(value) {
@@ -85,16 +82,16 @@ document.addEventListener("DOMContentLoaded", () => {
     else return true;
   }
 
-  // FUNCTION THAT VALIDATES THE INPUT AND UPDATES THE VALUE OF THE COUNTER; IT DOES NOT UPDATE THE DOM; THE SIGN OF THE OPERATION IS PASSED INSIDE THE EVENTLISTENER:
+  // FUNCTION THAT VALIDATES THE INPUT AND UPDATES THE VALUE OF THE COUNTER; IT DOES NOT UPDATE THE DOM; 
   function update_counter(step, operation) {
     if (!validate_input(step)) {
       alert("The step can only be an integer between 1 and 100");
-      return;
-    } else {
+    }
+    else {
       if (operation === "+") counter_value += step;
       else if (operation === "-") counter_value -= step;
-      return;
     }
+    return;
   } // end update_counter
 
   // UPDATE THE DOM
@@ -102,23 +99,26 @@ document.addEventListener("DOMContentLoaded", () => {
     counter_div.textContent = counter_value;
   }
 
-//========================================================
+  // UPDATE COUNTER AND DISPLAY IN ONE FUNCTION; OPERATION PARAMETER IS PASSED INSIDE THE LISTENER:
+  function update_and_display(step, operation) {
+    update_counter(step, operation);
+    update_display();
+  }
 
+  //========================================================
 
-//============ EVENT LISTENERS ===========================
+  //============ EVENT LISTENERS ===========================
   //
   // IF THE USER CLICKS ON +
   increment_btn.addEventListener("click", () => {
     const step = Number(step_input.value);
-    update_counter(step, "+");
-    update_display();
+    update_and_display(step, "+");
   });
 
   // IF THE USER CLICKS ON -
   decrement_btn.addEventListener("click", () => {
     const step = Number(step_input.value);
-    update_counter(step, "-");
-    update_display();
+    update_and_display(step, "-");
   });
 
   // IF THE USER CLICKS THE RESET BUTTON
@@ -126,6 +126,5 @@ document.addEventListener("DOMContentLoaded", () => {
     counter_value = 0;
     update_display();
   });
-//========================================================
-    
+  //========================================================
 }); // END DOMCONTENTLOADED
